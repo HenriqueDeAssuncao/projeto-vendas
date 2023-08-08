@@ -9,26 +9,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="/css/header.css">
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/styles.css">
   <title>@yield('title')</title>
   @php
     require_once "helpers/db.php";
   @endphp
 </head>
 <body>
-  <header>
-    <nav>
-        <ul>
-          <li>
-            <a href="/anuncios">Meus anúncios</a>
-          </li>
-          <li>
-            <a href="/criar">Novo</a>
-          </li>
-        </ul>
-    </nav>
-  </header>
+  <section id="header">
+
+  <div>
+    <ul id="navbar">
+      <li><a class="active" href="/ads">Meus anúncios</a></li>
+      <li><a class="active" href="/create">Cadastrar</a></li>
+    </ul>
+  </div>
+  </section>
   @yield('content')
   <footer>
 

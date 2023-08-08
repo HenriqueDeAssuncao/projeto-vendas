@@ -2,6 +2,7 @@
 class Ad
 {
   public $productId;
+  public $token;
   public $title;
   public $description;
   public $image;
@@ -11,7 +12,7 @@ class Ad
   public $price;
   public function verifyImg($image)
   {
-    if ($image['error']) {
+    if ($image['error'] != 0) {
       die("Falha ao enviar a imagem.");
     }
 
@@ -33,5 +34,11 @@ class Ad
     $pathString = "../" . $path;
     $moveFile = move_uploaded_file($image["tmp_name"], $pathString);
     return $moveFile;
+  }
+
+  function setToken()
+  {
+    $token = bin2hex(random_bytes(50));
+    $this->token = $token;
   }
 }

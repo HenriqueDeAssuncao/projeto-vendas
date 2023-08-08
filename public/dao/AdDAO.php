@@ -10,6 +10,7 @@ class AdDAO
   }
   public function createAd(Ad $Ad)
   {
+    $token = $Ad->token;
     $title = $Ad->title;
     $description = $Ad->description;
     $image = $Ad->image;
@@ -19,11 +20,12 @@ class AdDAO
     $price = $Ad->price;
 
     $stmt = $this->conn->prepare("INSERT INTO products 
-    (title, description, image, cep, num, category, price) 
+    (token, title, description, image, cep, num, category, price) 
     VALUES 
-    (:title, :description, :image, :cep, :num, :category, :price)
+    (:token, :title, :description, :image, :cep, :num, :category, :price)
     ");
 
+    $stmt->bindParam(":token", $token);
     $stmt->bindParam(":title", $title);
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":image", $image);

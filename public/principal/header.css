@@ -1,0 +1,93 @@
+*{
+  margin: 0;
+}
+
+#detalhe .foto{
+  width: 40%;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.fotos{
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-foto-s{
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+#detalhe{
+  display: flex;
+  margin-top: 20px;
+}
+
+#detalhe .txt{
+  width: 50%;
+  padding-top: 30px;
+}
+
+#detalhe .txt h6{
+  /*padding: 0px 0 0px 0;*/
+  font-size: 14px;
+  font-weight: 300;
+  color: #1C1C1C;
+}
+
+#detalhe .txt h2{
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.nome{
+  font-size: 26px;
+  font-weight: 300;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  color: #363636;
+}
+
+#detalhe .txt p{
+  padding-top: 0;
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-size: 14px;
+ color: #A9A9A9;
+}
+
+.comprar{
+  background: #9400D3;
+  color: white;
+  padding: 10px 20px;
+  text-justify: center;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 16px;
+  border: none;
+  margin-right: 10px;
+}
+
+.chat{
+    border: 1px solid #9400D3;
+    color: #9400d3;
+    background:#DDA0DD;
+    padding: 9px 20px;
+    text-justify: center;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.desc{
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #363636;
+  }
+
+  .txt span{
+    line-height: 25px;
+  }
+  

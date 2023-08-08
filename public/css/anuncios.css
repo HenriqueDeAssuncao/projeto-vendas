@@ -1,0 +1,42 @@
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.3rem;
+}
+
+#anuncios{
+	padding: 10vh 10vw 0 10vw;
+}
+
+.bloco{
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.img{
+	margin-right: 40px;
+}
+
+img{
+	height: 300px;
+	object-fit: cover;
+}
+
+.dtl{
+	padding: 0 3%;
+}
+
+.dtl a{
+	width: 50%;
+	text-decoration: none;
+	color: black;
+	font-weight: 700;
+	position: relative;
+	transition: 0.3s;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1rem;
+}
+
+.dtl a:hover{
+	color: #9400D3;
+}

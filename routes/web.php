@@ -16,15 +16,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
 
 Route::get('/', [AdController::class, 'index']);
-Route::get('/events/create', [AdController::class, 'create']);
-
-Route::get('/criar', function () {
-    return view('criar');
-});
-
-Route::get('/anuncios', function () {
-    return view('anuncios');
-});
+Route::get('/create', [AdController::class, 'create']);
+Route::get('/ad', [AdController::class, 'ad']);
+Route::get('/ads', [AdController::class, 'ads']);
 
 // Route::get('/produtos/{id}', function ($id) {
 //     //poderia ser $id = 1
