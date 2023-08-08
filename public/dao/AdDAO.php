@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/../models/Ad.php";
+require_once __DIR__ . "/../models/Cep.php";
 class AdDAO
 {
   private $conn;
@@ -46,6 +47,7 @@ class AdDAO
 
     foreach ($AdsArray as $ad) {
       $Ad = new Ad;
+      $Ad->productId = $ad["product_id"];
       $Ad->title = $ad["title"];
       $Ad->description = $ad["description"];
       $Ad->image = $ad["image"];
@@ -78,5 +80,19 @@ class AdDAO
 
     return $Ad;
   }
-  
+  function findCep($productId)
+  {
+    $stmt = $this->conn->prepare("SELECT * FROM ceps WHERE product_id = :product_id");
+    $stmt->bindParam(":product_id", $productId);
+    $stmt->execute();
+
+    $cepArray = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $Cep = new Cep;
+    $Cep->cepId = $cepArray["cep_id"];
+    $Cep->cidade = $cepArray["cidade"];
+    $Cep->bairro = $cepArray["bairro"];
+    $Cep->logradouro = $cepArray["logradouro"];
+    return $Cep;
+  }
 }

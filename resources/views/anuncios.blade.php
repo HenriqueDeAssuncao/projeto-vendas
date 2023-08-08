@@ -10,10 +10,14 @@
 @section('content')
   @if (count($ads))
     @foreach($ads as $ad) 
+      @php
+        $cep = $AdDao->findCep($ad->productId); 
+      @endphp
       <div class="ad-container">
         <p><?=$ad->title?></p>
         <img src="<?=$ad->image?>" alt="">
         <p><?=$ad->price?></p>
+        <p>$cep->logradouro</p>
       </div>
     @endforeach
     @else

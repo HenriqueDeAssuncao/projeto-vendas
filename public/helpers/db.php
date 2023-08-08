@@ -1,5 +1,5 @@
 <?php
-$db_name = "olx";
+$db_name = "vendas";
 $db_host = "localhost";
 $db_user = "root";
 $db_password = "";

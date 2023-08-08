@@ -1,6 +1,7 @@
 <?php
 class Ad
 {
+  public $productId;
   public $title;
   public $description;
   public $image;
@@ -33,5 +34,4 @@ class Ad
     $moveFile = move_uploaded_file($image["tmp_name"], $pathString);
     return $moveFile;
   }
-
 }
