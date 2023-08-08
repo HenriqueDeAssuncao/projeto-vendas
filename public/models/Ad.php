@@ -33,4 +33,5 @@ class Ad
     $moveFile = move_uploaded_file($image["tmp_name"], $pathString);
     return $moveFile;
   }
+
 }

@@ -78,4 +78,5 @@ class AdDAO
 
     return $Ad;
   }
+  
 }

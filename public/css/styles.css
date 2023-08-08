@@ -2,3 +2,13 @@
   font-family: Roboto;
   color: blue;
 }
+
+ad-container {
+  border: 1px solid black;
+  width: 800px;
+  margin: 0 auto;
+}
+
+ad-container img {
+  width: 400px;
+}

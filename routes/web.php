@@ -26,9 +26,6 @@ Route::get('/anuncios', function () {
     return view('anuncios');
 });
 
-
-
-
 // Route::get('/produtos/{id}', function ($id) {
 //     //poderia ser $id = 1
 //     return view('produtos', ['id' => $id]);

@@ -32,6 +32,8 @@ if (!empty($_POST)) {
 
     $AdDao->createAd($Ad);
 
+    header("location: /anuncios");
+
   } else {
     die("Todos os campos são obrigatórios.");
   }
