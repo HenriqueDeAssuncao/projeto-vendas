@@ -38,7 +38,7 @@ class Ad
 
   function setToken()
   {
-    $token = bin2hex(random_bytes(50));
+    $token = bin2hex(random_bytes(15));
     $this->token = $token;
   }
 }

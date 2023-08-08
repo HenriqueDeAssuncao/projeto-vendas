@@ -50,6 +50,7 @@ class AdDAO
     foreach ($AdsArray as $ad) {
       $Ad = new Ad;
       $Ad->productId = $ad["product_id"];
+      $Ad->token = $ad["token"];
       $Ad->title = $ad["title"];
       $Ad->description = $ad["description"];
       $Ad->image = $ad["image"];
@@ -73,6 +74,7 @@ class AdDAO
 
     $Ad = new Ad;
     $Ad->title = $adArray["title"];
+    $Ad->token = $adArray["token"];
     $Ad->description = $adArray["description"];
     $Ad->image = $adArray["image"];
     $Ad->cep = $adArray["cep"];

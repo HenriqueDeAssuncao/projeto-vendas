@@ -35,7 +35,7 @@ class ImageDAO
     $stmt->bindParam(":token", $token);
     $stmt->execute();
     $productId = $stmt->fetch();
-    return $productId;
+    return $productId[0];
   }
   public function createImage(Image $Image)
   {

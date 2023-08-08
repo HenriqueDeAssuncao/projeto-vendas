@@ -32,37 +32,29 @@ if (!empty($_POST)) {
 
     //Cadastrar imagens
 
-    $i = 0;
+    $imgNum = count($images["name"]);
 
-    foreach ($images as $array => $value) {
-      $Image = new Image;
-      $ImageDao = new ImageDAO($conn);
-
+    for ($i = 0; $i < $imgNum; $i++) {
       $image = [];
+      $image["name"] = $images["name"][$i];
+      $image["full_path"] = $images["full_path"][$i];
+      $image["tmp_name"] = $images["tmp_name"][$i];
+      $image["error"] = $images["error"][$i];
+      $image["size"] = $images["size"][$i];
+      //print_r($image);
+      //echo "<br>";
 
-      $image["name"] = $array["name"][$i];
-      $image["full_path"] = $array["full_path"][$i];
-      $image["tmp_name"] = $array["tmp_name"][$i];
-      $image["error"] = $array["error"][$i];
-      $image["size"] = $array["size"][$i];
-
-      print_r($image);
-      echo "<br>";
-
-      return;
-
+      //Cadastro a imagem
       $path = $Ad->verifyImg($image);
       $Ad->uploadImg($image, $path);
 
+      $Image = new Image;
+      $ImageDao = new ImageDAO($conn);
 
-
+      $Image->productId = $ImageDao->findProductId($Ad->token);
       $Image->image = $path;
-      $productId = $ImageDao->findProductId($Ad->token);
-      $Image->productId = $productId;
 
       $ImageDao->createImage($Image);
-
-      $i++;
     }
 
     header("location: /ads");

@@ -3,11 +3,7 @@
 <link rel="stylesheet" href="/css/anuncio.css">
 
 @php
-    require_once "dao/AdDAO.php";  
-    require_once "helpers/db.php";
-    $id = $_GET["id"];
-    $AdDao = new AdDAO($conn);
-    $Ad = $AdDao->findProduct($id);
+    require_once "process/ad_process.php";
 @endphp
 
 @section('title', 'Anúncio')
@@ -15,28 +11,21 @@
 @section('content')
     <section id="detalhe" class="sec1">
     <div class="foto">
-        <img src="<?=$Ad->image?>" width="100%" alt="" id="foto-p">
+        <img src="<?=$images[0]->image?>" width="100%" alt="" id="foto-p">
 
         <div class="fotos">
-        <div class="col-foto-s">
-        <img src="b.jpg" width="100%" alt="" class="foto-s">
-        </div>
-        <div class="col-foto-s">
-        <img src="c.jpg" width="100%" alt="" class="foto-s">
-        </div>
-        <div class="col-foto-s">
-        <img src="d.jpg" width="100%" alt="" class="foto-s">
-        </div>
-        <div class="col-foto-s">
-        <img src="e.jpg" width="100%" alt="" class="foto-s">
-        </div>
+            @foreach($images as $Image) 
+                <div class="col-foto-s">
+                    <img src="<?=$Image->image?>" width="100%" alt="" class="foto-s">
+                </div>
+            @endforeach
         </div>
     </div>
 
     <div class="txt">
         <h6>CEP:<?=$Ad->cep?> > <?=$Ad->category?> </h6>
         <h4 class="nome"><?=$Ad->title?></h4>
-        <P>Publicado em 03/08 às 19:34 - cód. 1218244598</P>
+        <P>Publicado em 03/08 às 19:34 - cód. <?=$Ad->token?></P>
         <h2>R$<?=$Ad->price?></h2>
         <button class="comprar">Comprar</button>
         <button class="chat">Chat</button>
